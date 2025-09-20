@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date Validator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .result { margin-top: 10px; font-weight: bold; }
+        input[type="text"] { width: 250px; padding: 5px; }
+        button { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h2>Date Validator</h2>
+    <label for="date">Enter date (e.g., 2024-06-01):</label><br>
+    <input type="text" id="date" placeholder="YYYY-MM-DD">
+    <button onclick="validateDate()">Check</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        function isLeapYear(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+
+        function daysInMonth(year, month) {
+            if (month === 2) {
+                return isLeapYear(year) ? 29 : 28;
+            }
+            return [31,28,31,30,31,30,31,31,30,31,30,31][month - 1];
+        }
+
+        function validateDate() {
+            const input = document.getElementById('date').value.trim();
+            const regex = /^(\d{4})-(\d{2})-(\d{2})$/;
+            const match = input.match(regex);
+            const result = document.getElementById('result');
+
+            if (!match) {
+                result.textContent = "Invalid format!";
+                result.style.color = "red";
+                return;
+            }
+
+            const year = parseInt(match[1], 10);
+            const month = parseInt(match[2], 10);
+            const day = parseInt(match[3], 10);
+
+            if (year < 1000 || year > 3000) {
+                result.textContent = "Year must be between 1000 and 3000!";
+                result.style.color = "red";
+                return;
+            }
+            if (month < 1 || month > 12) {
+                result.textContent = "Month must be between 1 and 12!";
+                result.style.color = "red";
+                return;
+            }
+            const maxDay = daysInMonth(year, month);
+            if (day < 1 || day > maxDay) {
+                result.textContent = `Day must be between 1 and ${maxDay} for month ${month}!`;
+                result.style.color = "red";
+                return;
+            }
+
+            result.textContent = "Valid date!";
+            result.style.color = "green";
+        }
+    </script>
+</body>
+</html>
