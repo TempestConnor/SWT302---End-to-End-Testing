@@ -175,4 +175,251 @@ Scenario('Test Day above range for February leap year', ({ I }) => {
     I.wait(2);
 });
 
+// Test cases for ODD months (31 days) - Tháng lẻ có 31 ngày
+Scenario('Test Odd Month - January (Month 1) has 31 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 1 - tháng lẻ có 31 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-01-31');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - January (Month 1) invalid day 32', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 1 - ngày 32 không hợp lệ
+    I.fillField('input[type="text"]', '2024-01-32');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - March (Month 3) has 31 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 3 - tháng lẻ có 31 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-03-31');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - March (Month 3) invalid day 32', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 3 - ngày 32 không hợp lệ
+    I.fillField('input[type="text"]', '2024-03-32');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - May (Month 5) has 31 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 5 - tháng lẻ có 31 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-05-31');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - May (Month 5) invalid day 32', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 5 - ngày 32 không hợp lệ
+    I.fillField('input[type="text"]', '2024-05-32');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - July (Month 7) has 31 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 7 - tháng lẻ có 31 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-07-31');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - July (Month 7) invalid day 32', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 7 - ngày 32 không hợp lệ
+    I.fillField('input[type="text"]', '2024-07-32');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - August (Month 8) has 31 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 8 - tháng chẵn nhưng có 31 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-08-31');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - August (Month 8) invalid day 32', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 8 - ngày 32 không hợp lệ
+    I.fillField('input[type="text"]', '2024-08-32');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - October (Month 10) has 31 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 10 - tháng chẵn nhưng có 31 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-10-31');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - October (Month 10) invalid day 32', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 10 - ngày 32 không hợp lệ
+    I.fillField('input[type="text"]', '2024-10-32');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - December (Month 12) has 31 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 12 - tháng chẵn nhưng có 31 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-12-31');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Odd Month - December (Month 12) invalid day 32', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 12 - ngày 32 không hợp lệ
+    I.fillField('input[type="text"]', '2024-12-32');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+// Test cases for EVEN months (30 days) - Tháng chẵn có 30 ngày
+Scenario('Test Even Month - April (Month 4) has 30 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 4 - tháng chẵn có 30 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-04-30');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Even Month - April (Month 4) invalid day 31', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 4 - ngày 31 không hợp lệ (chỉ có 30 ngày)
+    I.fillField('input[type="text"]', '2024-04-31');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Even Month - June (Month 6) has 30 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 6 - tháng chẵn có 30 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-06-30');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Even Month - June (Month 6) invalid day 31', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 6 - ngày 31 không hợp lệ (chỉ có 30 ngày)
+    I.fillField('input[type="text"]', '2024-06-31');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Even Month - September (Month 9) has 30 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 9 - tháng lẻ nhưng chỉ có 30 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-09-30');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Even Month - September (Month 9) invalid day 31', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 9 - ngày 31 không hợp lệ (chỉ có 30 ngày)
+    I.fillField('input[type="text"]', '2024-09-31');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Even Month - November (Month 11) has 30 days', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 11 - tháng lẻ nhưng chỉ có 30 ngày - ngày hợp lệ
+    I.fillField('input[type="text"]', '2024-11-30');
+    I.click('Check');
+    I.waitForText('Valid date!', 10);
+    I.wait(2);
+});
+
+Scenario('Test Even Month - November (Month 11) invalid day 31', ({ I }) => {
+    I.amOnPage('http://localhost:8080');
+    I.waitForText('Date Validator', 10);
+    
+    // Test tháng 11 - ngày 31 không hợp lệ (chỉ có 30 ngày)
+    I.fillField('input[type="text"]', '2024-11-31');
+    I.click('Check');
+    I.waitForText('Invalid date!', 10);
+    I.wait(2);
+});
+
+
+
+
 
